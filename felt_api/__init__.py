@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "1.0.6"
+__version__ = "1.0.7"
 
 # import apis into sdk package
 from felt_api.api.default_api import DefaultApi

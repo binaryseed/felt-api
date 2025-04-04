@@ -7,7 +7,7 @@
 
 # docker run --rm openapitools/openapi-generator-cli help generate
 
-version=`cat VERSION`
+version=`cat VERSION | xargs echo`
 echo "Generating v$version"
 
 rm -rf felt_api
