@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **layer_group_id** | **str** |  | [optional] 
 **layer_id** | **str** | The ID of the layer created by this upload. If multiple layers are included in the upload, this is the ID of the first layer in the layer group. | [optional] 
-**presigned_attribues** | **object** | If provided, the presigned attributes to attach to the post request | [optional] 
+**presigned_attributes** | **object** | If provided, the presigned attributes to attach to the post request | [optional] 
 **type** | **str** |  | [optional] 
 **url** | **str** | If provided, the URL to post the file to | [optional] 
 

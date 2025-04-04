@@ -969,7 +969,7 @@ with felt_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = felt_api.DefaultApi(api_client)
     map_id = 'map_id_example' # str | 
-    user_email = 'user_email_example' # str | Optionally assign the token to a user email address. Providing an email will enable viewers to export data if the Map allows it. (optional)
+    user_email = 'user_email_example' # str | Optionally assign the token to a user email address. Providing an email will enable the viewer to export data if the Map allows it. (optional)
 
     try:
         api_response = api_instance.map_create_embed_token(map_id, user_email=user_email)
@@ -987,7 +987,7 @@ with felt_api.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **map_id** | **str**|  | 
- **user_email** | **str**| Optionally assign the token to a user email address. Providing an email will enable viewers to export data if the Map allows it. | [optional] 
+ **user_email** | **str**| Optionally assign the token to a user email address. Providing an email will enable the viewer to export data if the Map allows it. | [optional] 
 
 ### Return type
 

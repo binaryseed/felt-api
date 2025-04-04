@@ -28,10 +28,10 @@ class UploadResponse(BaseModel):
     """ # noqa: E501
     layer_group_id: Optional[StrictStr] = None
     layer_id: Optional[StrictStr] = Field(default=None, description="The ID of the layer created by this upload. If multiple layers are included in the upload, this is the ID of the first layer in the layer group.")
-    presigned_attribues: Optional[Dict[str, Any]] = Field(default=None, description="If provided, the presigned attributes to attach to the post request")
+    presigned_attributes: Optional[Dict[str, Any]] = Field(default=None, description="If provided, the presigned attributes to attach to the post request")
     type: Optional[StrictStr] = None
     url: Optional[StrictStr] = Field(default=None, description="If provided, the URL to post the file to")
-    __properties: ClassVar[List[str]] = ["layer_group_id", "layer_id", "presigned_attribues", "type", "url"]
+    __properties: ClassVar[List[str]] = ["layer_group_id", "layer_id", "presigned_attributes", "type", "url"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
@@ -82,10 +82,10 @@ class UploadResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if presigned_attribues (nullable) is None
+        # set to None if presigned_attributes (nullable) is None
         # and model_fields_set contains the field
-        if self.presigned_attribues is None and "presigned_attribues" in self.model_fields_set:
-            _dict['presigned_attribues'] = None
+        if self.presigned_attributes is None and "presigned_attributes" in self.model_fields_set:
+            _dict['presigned_attributes'] = None
 
         # set to None if url (nullable) is None
         # and model_fields_set contains the field
@@ -106,7 +106,7 @@ class UploadResponse(BaseModel):
         _obj = cls.model_validate({
             "layer_group_id": obj.get("layer_group_id"),
             "layer_id": obj.get("layer_id"),
-            "presigned_attribues": obj.get("presigned_attribues"),
+            "presigned_attributes": obj.get("presigned_attributes"),
             "type": obj.get("type"),
             "url": obj.get("url")
         })

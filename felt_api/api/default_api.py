@@ -3218,7 +3218,7 @@ class DefaultApi:
     def map_create_embed_token(
         self,
         map_id: StrictStr,
-        user_email: Annotated[Optional[StrictStr], Field(description="Optionally assign the token to a user email address. Providing an email will enable viewers to export data if the Map allows it.")] = None,
+        user_email: Annotated[Optional[StrictStr], Field(description="Optionally assign the token to a user email address. Providing an email will enable the viewer to export data if the Map allows it.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3237,7 +3237,7 @@ class DefaultApi:
 
         :param map_id:  (required)
         :type map_id: str
-        :param user_email: Optionally assign the token to a user email address. Providing an email will enable viewers to export data if the Map allows it.
+        :param user_email: Optionally assign the token to a user email address. Providing an email will enable the viewer to export data if the Map allows it.
         :type user_email: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3294,7 +3294,7 @@ class DefaultApi:
     def map_create_embed_token_with_http_info(
         self,
         map_id: StrictStr,
-        user_email: Annotated[Optional[StrictStr], Field(description="Optionally assign the token to a user email address. Providing an email will enable viewers to export data if the Map allows it.")] = None,
+        user_email: Annotated[Optional[StrictStr], Field(description="Optionally assign the token to a user email address. Providing an email will enable the viewer to export data if the Map allows it.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3313,7 +3313,7 @@ class DefaultApi:
 
         :param map_id:  (required)
         :type map_id: str
-        :param user_email: Optionally assign the token to a user email address. Providing an email will enable viewers to export data if the Map allows it.
+        :param user_email: Optionally assign the token to a user email address. Providing an email will enable the viewer to export data if the Map allows it.
         :type user_email: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3370,7 +3370,7 @@ class DefaultApi:
     def map_create_embed_token_without_preload_content(
         self,
         map_id: StrictStr,
-        user_email: Annotated[Optional[StrictStr], Field(description="Optionally assign the token to a user email address. Providing an email will enable viewers to export data if the Map allows it.")] = None,
+        user_email: Annotated[Optional[StrictStr], Field(description="Optionally assign the token to a user email address. Providing an email will enable the viewer to export data if the Map allows it.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3389,7 +3389,7 @@ class DefaultApi:
 
         :param map_id:  (required)
         :type map_id: str
-        :param user_email: Optionally assign the token to a user email address. Providing an email will enable viewers to export data if the Map allows it.
+        :param user_email: Optionally assign the token to a user email address. Providing an email will enable the viewer to export data if the Map allows it.
         :type user_email: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
