@@ -7,7 +7,8 @@ import io
 import os
 
 
-def client(api_key: str):
+def client():
+    api_key = os.environ["FELT_API_KEY"]
     configuration = felt_api.Configuration(host="https://felt.com")
     configuration.api_key["bearerAuth"] = api_key
     configuration.api_key_prefix["bearerAuth"] = "Bearer"
@@ -15,11 +16,19 @@ def client(api_key: str):
     return felt_api.DefaultApi(api_client)
 
 
-def upload_file(client, map_id: str, file_name: str, layer_name: str):
+def refresh_file_layer(map_id: str, layer_id: str, file_name: str):
+    result = client().map_refresh_layer(map_id, layer_id)
+    with open(file_name, "rb") as file_obj:
+        request = _multipart_request(result.url, result.presigned_attributes, file_obj)
+        urllib.request.urlopen(request)
+    return result
+
+
+def upload_file(map_id: str, file_name: str, layer_name: str):
     map_upload_layer_request = felt_api.MapUploadLayerRequest.from_dict(
         {"name": layer_name}
     )
-    result = client.map_upload_layer(
+    result = client().map_upload_layer(
         map_id, map_upload_layer_request=map_upload_layer_request
     )
     with open(file_name, "rb") as file_obj:
