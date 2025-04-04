@@ -191,10 +191,3 @@ from felt_api.models.wktwkb_literal_attribute_hint_attribute import WKTWKBLitera
 from felt_api.models.wmswmts_connection import WMSWMTSConnection
 from felt_api.models.wmswmts_connection_create_params import WMSWMTSConnectionCreateParams
 from felt_api.models.wmswmts_connection_update_params import WMSWMTSConnectionUpdateParams
-
-def client(api_key: str):
-    configuration = Configuration(host = "https://felt.com")
-    configuration.api_key['bearerAuth'] = api_key
-    configuration.api_key_prefix['bearerAuth'] = 'Bearer'
-    api_client = ApiClient(configuration)
-    return DefaultApi(api_client)

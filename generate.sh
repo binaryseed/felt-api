@@ -16,5 +16,5 @@ docker run --rm -v "/Users/vince/felt/felt_api:/local" -v "/Users/vince/felt/fel
           -g python \
           -o /local
 
-git add felt_api requirements.txt setup.py
+git add felt_api docs README.md requirements.txt setup.py
 git clean -fd
