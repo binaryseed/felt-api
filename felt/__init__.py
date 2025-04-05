@@ -25,12 +25,8 @@ def refresh_file_layer(map_id: str, layer_id: str, file_name: str):
 
 
 def upload_file(map_id: str, file_name: str, layer_name: str):
-    map_upload_layer_request = felt_api.MapUploadLayerRequest.from_dict(
-        {"name": layer_name}
-    )
-    result = client().map_upload_layer(
-        map_id, map_upload_layer_request=map_upload_layer_request
-    )
+    map_upload_layer_request = felt_api.MapUploadLayerRequest(name=layer_name)
+    result = client().map_upload_layer(map_id, map_upload_layer_request)
     with open(file_name, "rb") as file_obj:
         request = _multipart_request(result.url, result.presigned_attributes, file_obj)
         urllib.request.urlopen(request)
