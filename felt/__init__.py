@@ -37,6 +37,14 @@ def upload_file(map_id: str, file_name: str, layer_name: str):
     return result
 
 
+def download_layer(map_id: str, layer_id: str, file_name: str):
+    result = client().map_get_export_link(map_id, layer_id)
+    with urllib.request.urlopen(result.export_link) as response:
+        with open(file_name, "wb") as file_obj:
+            file_obj.write(response.read())
+    return file_name
+
+
 def _multipart_request(
     url: str, presigned_attributes: dict[str, str], file_obj: typing.IO[bytes]
 ) -> urllib.request.Request:
